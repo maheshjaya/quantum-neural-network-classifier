@@ -21,40 +21,6 @@ The model learns to separate the nonlinearly separable two-moons dataset.
 
 ---
 
-## 🧠 Model Architecture
-
-### Encoding
-Input features \((x_1, x_2)\) are encoded using **feature duplication**:
-
-\[
-(x_1, x_2) \rightarrow (x_1, x_2, x_1, x_2)
-\]
-
-Each value is applied as a rotation angle using `RY`.
-
-### Variational Circuit
-Each layer consists of:
-
-- Per-qubit: `RZ → RY → RZ`
-- Entanglement:
-
-Two such layers are applied.
-
-### Measurement
-The model outputs:
-
-\[
-\langle Z_0 \rangle \in [-1, 1]
-\]
-
-which is converted to a probability:
-
-\[
-p = (1 - \langle Z_0 \rangle)/2
-\]
-
----
-
 ## 📊 Dataset
 
 - Two-moons dataset
